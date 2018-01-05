@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Travelcream</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="./includes/css/styles.css">
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header__background">
+        <img src="./includes/img/header-background.png" alt="header-background" class="site-header__background-img">
+        <div class="site-header__background-title-container">
+          <div class="container">
+            <h1 class="site-header__background-title">Do you want to visit Paris?</h1>
+            <h3 class="site-header__background-subtitle">Why not?</h3>
+          </div><!--end container-->
+        </div><!--end site-header__background-title-container-->
+        <form class="site-header__form" action="index.html" method="post">
+          <div class="container">
+            <input type="text" name="location-from" class="site-header__form-input-from" placeholder="Where are you leaving from ?">
+            <input type="text" name="location-to" class="site-header__form-input-to" placeholder="Where do you want to go ?">
+            <input placeholder="Date" type="date" name="date" class="site-header__form-input-date">
+            <button type="submit" name="button" class="site-header__form-input-submit">Search</button>
+          </div><!--end container-->
+        </form><!--end site-header__form-->
+      </div><!--end site-header__background-->
+      <div class="container">
+        <nav class="site-header__nav">
+          <ul class="site-header__nav-list">
+            <li class="site-header__nav-list-item site-header__nav-list-item--home">
+              <a href="/">TravelCream</a>
+            </li>
+            <li class="site-header__nav-list-item">
+              <a href="#">Flights</a>
+            </li>
+            <li class="site-header__nav-list-item">
+              <a href="#">Hotels</a>
+            </li>
+            <li class="site-header__nav-list-item">
+              <a href="#">Trips</a>
+            </li>
+            <li class="site-header__nav-list-item">
+              <a href="#">Activity</a>
+            </li>
+            <li class="site-header__nav-list-item">
+              <a href="#">Deals</a>
+            </li>
+          </ul><!--end site-header__nav-list-->
+          <div class="site-header__login-btn-container">
+            <a href="#" class="site-header__login-btn">Login</a>
+          </div><!--end site-header__login-btn-container -->
+          <div class="site-header__mobile-dropdown">
+            <span class="site-header__mobile-dropdown-line"></span>
+            <span class="site-header__mobile-dropdown-line"></span>
+            <span class="site-header__mobile-dropdown-line"></span>
+          </div><!--end site-header__mobile-dropdown-->
+        </nav><!--end site-header-nav-->
+      </div><!--end container-->
+    </header><!--end site-header-->
+    <main class="main-content">
+      <div class="container">
+        <div class="main-content__schedule">
+          <section class="main-content__schedule-flight-options">
+            <h2 class="main-content__schedule-flight-options-title">Flights</h2>
+            <ul class="main-content__schedule-flight-options-list">
+              <li class="main-content__schedule-flight-options-list-item">
+                <a href="#" class="main-content__schedule-flight-options-list-item-link">Non stop</a>
+              </li>
+              <li class="main-content__schedule-flight-options-list-item">
+                <a href="#" class="main-content__schedule-flight-options-list-item-link">Best Price</a>
+              </li>
+              <li class="main-content__schedule-flight-options-list-item">
+                <a href="#" class="main-content__schedule-flight-options-list-item-link">Airline</a>
+              </li>
+              <li class="main-content__schedule-flight-options-list-item">
+                <a href="#" class="main-content__schedule-flight-options-list-item-link">Schedule</a>
+              </li>
+            </ul><!--end main-content__schedule-flight-options-list-->
+          </section><!--end main-content__schedule-flight-options-->
+          <div class="main-content__schedule-content">
+            <!-- first row -->
+            <section class="main-content__schedule-content-first-column main-content__schedule-content-first-column-heading">
+              <h4>Airline</h4>
+            </section><!--main-content__schedule-content-first-column-->
+            <section class="main-content__schedule-content-second-column main-content__schedule-content-second-column-heading">
+              <ul class="main-content__schedule-content-second-column-list">
+                <li>Date</li>
+                <li>Departure</li>
+                <li>Arrival</li>
+                <li>Time</li>
+              </ul>
+            </section><!--end main-content__schedule-content-second-column-->
+            <section class="main-content__schedule-content-third-column main-content__schedule-content-third-column-heading">
+              <h4>Price</h4>
+            </section><!--end main-content__schedule-content-third-column-->
+            <!-- second row -->
+            <section class="main-content__schedule-content-first-column">
+              <img src="./includes/img/vueling.gif" alt="vueling">
+            </section><!--main-content__schedule-content-first-column-->
+            <section class="main-content__schedule-content-second-column">
+              <ul class="main-content__schedule-content-second-column-list">
+                <li>Date</li>
+                <li>Departure</li>
+                <li>Arrival</li>
+                <li>Time</li>
+              </ul>
+            </section><!--end main-content__schedule-content-second-column-->
+            <section class="main-content__schedule-content-third-column">
+              <h3>Price</h3>
+            </section><!--end main-content__schedule-content-third-column-->
+            <!-- third row -->
+            <section class="main-content__schedule-content-first-column">
+              <img src="./includes/img/air_france.gif" alt="Air France">
+            </section><!--main-content__schedule-content-first-column-->
+            <section class="main-content__schedule-content-second-column">
+              <ul class="main-content__schedule-content-second-column-list">
+                <li>Date</li>
+                <li>Departure</li>
+                <li>Arrival</li>
+                <li>Time</li>
+              </ul>
+            </section><!--end main-content__schedule-content-second-column-->
+            <section class="main-content__schedule-content-third-column">
+              <h3>Price</h3>
+            </section><!--end main-content__schedule-content-third-column-->
+            <!-- forth row -->
+            <section class="main-content__schedule-content-first-column">
+              <img src="./includes/img/american.gif" alt="American airlines">
+            </section><!--main-content__schedule-content-first-column-->
+            <section class="main-content__schedule-content-second-column">
+              <ul class="main-content__schedule-content-second-column-list">
+                <li>Date</li>
+                <li>Departure</li>
+                <li>Arrival</li>
+                <li>Time</li>
+              </ul>
+            </section><!--end main-content__schedule-content-second-column-->
+            <section class="main-content__schedule-content-third-column">
+              <h3>Price</h3>
+            </section><!--end main-content__schedule-content-third-column-->
+            <!-- fifth row -->
+            <section class="main-content__schedule-content-first-column">
+              <img src="./includes/img/delta.gif" alt="Delta">
+            </section><!--main-content__schedule-content-first-column-->
+            <section class="main-content__schedule-content-second-column">
+              <ul class="main-content__schedule-content-second-column-list">
+                <li>Date</li>
+                <li>Departure</li>
+                <li>Arrival</li>
+                <li>Time</li>
+              </ul>
+            </section><!--end main-content__schedule-content-second-column-->
+            <section class="main-content__schedule-content-third-column">
+              <h3>Price</h3>
+            </section><!--end main-content__schedule-content-third-column-->
+            <!-- sixth row -->
+            <section class="main-content__schedule-content-first-column">
+              <img src="./includes/img/transavia.gif" alt="Transavia">
+            </section><!--main-content__schedule-content-first-column-->
+            <section class="main-content__schedule-content-second-column">
+              <ul class="main-content__schedule-content-second-column-list">
+                <li>Date</li>
+                <li>Departure</li>
+                <li>Arrival</li>
+                <li>Time</li>
+              </ul>
+            </section><!--end main-content__schedule-content-second-column-->
+            <section class="main-content__schedule-content-third-column">
+              <h3>Price</h3>
+            </section><!--end main-content__schedule-content-third-column-->
+          </div><!--end main-content__schedule-flight-options-->
+        </div><!--end main-content__schedule-->
+      </div><!--end container-->
+    </main>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+// imported files
+
+@import 'variables.scss';
+
+@media screen and (max-width: 1200px) {
+  div.container {
+    width: 970px;
+  }
+  h1.site-header__background-title {
+    font-size: $header-title-font-size-md;
+  }
+  h3.site-header__background-subtitle {
+    font-size: $header-subtitle-font-size-md;
+  }
+}
+
+@media (max-width: 992px) {
+  div.container {
+    width: 750px;
+  }
+  h1.site-header__background-title {
+    font-size: $header-title-font-size-sm;
+  }
+  h3.site-header__background-subtitle {
+    font-size: $header-subtitle-font-size-sm;
+  }
+}
+
+@media (max-width: 768px) {
+  div.container {
+    width: 90%;
+    margin: 0 5%;
+  }
+  .site-header__nav-list-item:not(:first-of-type) {
+    display: none;
+  }
+  a.site-header__login-btn {
+    display: none;
+  }
+  div.site-header__mobile-dropdown {
+    display: block;
+  }
+  h1.site-header__background-title {
+    font-size: $header-title-font-size-sm;
+  }
+  h3.site-header__background-subtitle {
+    font-size: $header-subtitle-font-size-sm;
+  }
+}
+
+@media (max-width: 640px) {
+  nav.site-header__nav {
+    padding: 10px 0;
+  }
+  div.site-header__background-title-container {
+    align-items: flex-end;
+  }
+  h1.site-header__background-title {
+    font-size: $header-title-font-size-xs;
+    margin-bottom: 0;
+  }
+  h3.site-header__background-subtitle {
+    font-size: $header-subtitle-font-size-xs;
+  }
+}
+
+@media (max-width: 480px) {
+  li.site-header__nav-list-item:first-of-type {
+    font-size: 18px;
+  }
+  span.site-header__mobile-dropdown-line {
+    width: 35px;
+  }
+  h1.site-header__background-title {
+    font-size: 18px;
+  }
+  h3.site-header__background-subtitle {
+    font-size: 14px;
+  }
+}
