@@ -227,23 +227,79 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 .main-content__schedule-content {
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  align-items: center;
   font-size: 16px;
 }
 
-.main-content__schedule-content-first-column-heading,
-.main-content__schedule-content-second-column-heading,
+.main-content__schedule-content-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 0;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.main-content__schedule-content-airline-heading,
+.main-content__schedule-content-flight-heading,
 .main-content__schedule-content-third-column-heading {
   font-weight: bold;
 }
 
-.main-content__schedule-content-second-column-list {
+.main-content__schedule-content-airline,
+.main-content__schedule-content-airline-heading {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+
+.main-content__schedule-content-flight {
+  width: 60%;
+}
+
+.main-content__schedule-content-third-column {
+  width: 20%;
+  text-align: center;
+}
+
+.main-content__schedule-content-airline-img {
+  margin-right: 28px;
+}
+
+.main-content__schedule-content-airline-description-title {
+  font-weight: normal;
+  margin: 0 0 10px 0;
+}
+
+.main-content__schedule-content-airline-description-details {
+  font-weight: normal;
+  margin: 10px 0 0 0;
+  color: #9a9a9a;
+}
+
+.main-content__schedule-content-flight-details {
   display: flex;
   justify-content: space-around;
 }
 
-.main-content__schedule-content-third-column {
+.main-content__schedule-content-flight-details-item-title {
+  @extend .main-content__schedule-content-airline-description-title;
+}
+.main-content__schedule-content-flight-details-item-details {
+  @extend .main-content__schedule-content-airline-description-details;
+}
+
+.main-content__schedule-content-buy-ticket-btn {
+  display: block;
+  width: 120px;
+  height: 38px;
+  color: red;
+  line-height: 38px;
   text-align: center;
+  border: 1px solid #ff4b64;
+  border-radius: 5px;
+  transition: $main-site-transition;
+  &:hover {
+    background-color: #ff4b64;
+    color: #fff;
+  }
 }
