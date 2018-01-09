@@ -2,6 +2,7 @@
 
 @import 'variables.scss';
 @import 'media.scss';
+@import 'mixins.scss';
 
 /*------------------------------------------------------------------------------
                               GENERAL STYLES
@@ -64,18 +65,22 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 .site-header__nav-list-item {
-  font-size: $nav-item-font-size-lg;
+  font-size: $main-font-size;
   margin-right: $nav-item-right-offset;
+  transition: $main-site-transition;
   &:first-of-type {
     font-size: $nav-homepage-font-size;
     font-weight: bold;
+  }
+  &:hover {
+    color: $main-font-hover-color;
   }
 }
 
 .site-header__login-btn {
   display: block;
   position: relative;
-  font-size: $nav-login-btn-font-size-lg;
+  font-size: $main-font-size;
   text-align: center;
   border: 2px solid #fff;
   border-radius: 5px;
@@ -85,8 +90,9 @@ input[type="date"]::-webkit-inner-spin-button {
   color: #fff;
   transition: $main-site-transition;
   &:hover {
-    background-color: #fff;
-    color: #1e2335;
+    background-color: $main-font-hover-color;
+    color: #fff;
+    border-color: $main-font-hover-color;
   }
 }
 
@@ -126,11 +132,11 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 .site-header__background-title {
-  font-size: $header-title-font-size-lg;
+  font-size: $header-title-font-size;
 }
 
 .site-header__background-subtitle {
-  font-size: $header-subtitle-font-size-lg;
+  font-size: $header-subtitle-font-size;
 }
 
 .site-header__background-img {
@@ -142,10 +148,9 @@ input[type="date"]::-webkit-inner-spin-button {
 
 .site-header__form {
   position: absolute;
-  bottom: -22px;
+  bottom: $header-form-offset-bottom;
   width: 100%;
   & > .container {
-    width: 100%;
     display: flex;
     justify-content: center;
   }
@@ -154,37 +159,35 @@ input[type="date"]::-webkit-inner-spin-button {
 .site-header__form input {
   outline: none;
   color: $header-form-color;
-  font-size: 16px;
+  font-size: $main-font-size;
 }
 
 .site-header__form-input-from,
 .site-header__form-input-to {
   width: $header-form-location-inputs-width;
   height: $header-form-location-inputs-height;
-  border: 1px solid #e6e6e6;
-  text-indent: 30px;
+  border: $header-form-inputs-border;
+  text-indent: $header-form-text-indent;
 }
 
 .site-header__form-input-date {
-  border: 1px solid #e6e6e6;
-  text-indent: 30px;
+  border: $header-form-inputs-border;
   height: $header-form-date-input-height;
-  width: 180px;
-  color: #fff;
+  width: $header-form-date-input-width;
 }
 
 .site-header__form-input-submit {
   border: none;
   cursor: pointer;
   height: $header-form-date-btn-height;
-  width: 120px;
-  background-color: #ff4b64;
+  width: $header-form-date-btn-width;
+  background-color: $header-form-date-btn-background;
   color: #fff;
   outline: none;
-  font-size: 16px;
+  font-size: $main-font-size;
   transition: $main-site-transition;
   &:hover {
-    background-color: lighten(#ff4b64, 5%);
+    background-color: lighten($header-form-date-btn-background, 5%);
   }
 }
 
@@ -193,113 +196,342 @@ input[type="date"]::-webkit-inner-spin-button {
 ------------------------------------------------------------------------------*/
 
 .main-content {
-  padding-top: 110px;
+  padding-top: $main-padding-top;
   color: $main-font-color;
 }
 
-.main-content__schedule-flight-options {
+.main-content__flights-table-flight-options {
+  @include before-every-section-options;
+}
+
+.main-content__flights-table-flight-options-title {
+  @include before-every-section-options-title;
+}
+
+.main-content__flights-table-flight-options-list {
+  @include before-every-section-options-list;
+}
+
+.main-content__flights-table-flight-options-list-item {
+  @include before-every-section-options-list-item;
+}
+
+.main-content__flights-table-content {
+  font-size: $main-font-size;
+}
+
+.main-content__flights-table-content-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-}
-
-.main-content__schedule-flight-options-title {
-  font-size: 30px;
-}
-
-.main-content__schedule-flight-options-list {
-  display: flex;
-}
-
-.main-content__schedule-flight-options-list-item {
-  font-size: 16px;
-  margin-right: 34px;
-  transition: $main-site-transition;
+  justify-content: space-between;
+  padding: $flights-table-content-row-padding;
+  border-top: $flights-table-content-row-border;
+  border-bottom: $flights-table-content-row-border;
   &:first-of-type {
-    color: #ff4b64;
-  }
-  &:last-of-type {
-    margin-right: 0;
-  }
-  &:hover {
-    color: #ff4b64;
+    border: none;
   }
 }
 
-.main-content__schedule-content {
-  font-size: 16px;
-}
-
-.main-content__schedule-content-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 50px 0;
-  border-top: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
-}
-
-.main-content__schedule-content-airline-heading,
-.main-content__schedule-content-flight-heading,
-.main-content__schedule-content-third-column-heading {
+.main-content__flights-table-content-airline-heading,
+.main-content__flights-table-content-flight-heading,
+.main-content__flights-table-content-third-column-heading {
   font-weight: bold;
 }
 
-.main-content__schedule-content-airline,
-.main-content__schedule-content-airline-heading {
-  width: 20%;
+.main-content__flights-table-content-airline,
+.main-content__flights-table-content-airline-heading {
+  width: $flights-table-content-airline-section-width;
   display: flex;
   align-items: center;
 }
 
-.main-content__schedule-content-flight {
-  width: 60%;
+.main-content__flights-table-content-flight {
+  width: $flights-table-content-flight-section-width;
 }
 
-.main-content__schedule-content-third-column {
-  width: 20%;
-  text-align: center;
+.main-content__flights-table-content-buy-ticket {
+  width: $flights-table-content-buy-ticket-section-width;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.main-content__schedule-content-airline-img {
-  margin-right: 28px;
+.main-content__flights-table-content-airline-img {
+  margin-right: $flights-table-content-airline-section-img-margin-right;
 }
 
-.main-content__schedule-content-airline-description-title {
+.main-content__flights-table-content-airline-description-title {
   font-weight: normal;
-  margin: 0 0 10px 0;
+  margin: $flights-table-content-airline-section-title-margin;
 }
 
-.main-content__schedule-content-airline-description-details {
+.main-content__flights-table-content-airline-description-details {
   font-weight: normal;
-  margin: 10px 0 0 0;
-  color: #9a9a9a;
+  margin: $flights-table-content-airline-section-details-margin;
+  color: $main-font-grey-color;
 }
 
-.main-content__schedule-content-flight-details {
+.main-content__flights-table-content-flight-details {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.main-content__schedule-content-flight-details-item-title {
-  @extend .main-content__schedule-content-airline-description-title;
-}
-.main-content__schedule-content-flight-details-item-details {
-  @extend .main-content__schedule-content-airline-description-details;
-}
-
-.main-content__schedule-content-buy-ticket-btn {
-  display: block;
-  width: 120px;
-  height: 38px;
-  color: red;
-  line-height: 38px;
+.main-content__flights-table-content-flight-details-item {
   text-align: center;
-  border: 1px solid #ff4b64;
+}
+
+.main-content__flights-table-content-flight-details-item-title {
+  @extend .main-content__flights-table-content-airline-description-title;
+}
+.main-content__flights-table-content-flight-details-item-details {
+  @extend .main-content__flights-table-content-airline-description-details;
+}
+
+.main-content__flights-table-content-buy-ticket-btn {
+  display: block;
+  width: $flights-table-content-buy-ticket-section-btn-width;
+  height: $flights-table-content-buy-ticket-section-btn-height;
+  color: $flights-table-content-buy-ticket-section-btn-color;
+  line-height: $flights-table-content-buy-ticket-section-btn-height;
+  text-align: center;
+  border: $flights-table-content-buy-ticket-section-btn-border;
   border-radius: 5px;
   transition: $main-site-transition;
   &:hover {
-    background-color: #ff4b64;
+    background-color: $flights-table-content-buy-ticket-section-btn-color;
     color: #fff;
+  }
+}
+
+.main-content__flights-table-all-flights-link {
+  display: block;
+  width: 100%;
+  text-align: right;
+  margin-top: $flights-table-all-flights-link-margin-top;
+  color: $flights-table-all-flights-link-color;
+  transition: $main-site-transition;
+  &:hover {
+    color: $main-font-hover-color;
+  }
+}
+
+// Hotels section
+
+.main-content__hotels-section {
+  padding: $common-section-padding;
+}
+
+.main-content__hotels-section-options {
+  @include before-every-section-options;
+}
+
+.main-content__hotels-section-options-title {
+  @include before-every-section-options-title;
+}
+
+.main-content__hotels-section-options-list {
+  @include before-every-section-options-list;
+}
+
+.main-content__hotels-section-options-list-item {
+  @include before-every-section-options-list-item;
+}
+
+.main-content__hotels-section-selection-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: $hotels-section-selection-container-gap;
+  padding-top: $common-section-content-padding-top;
+}
+
+.main-content__hotels-section-selection-container-item {
+  border: $common-section-border;
+}
+
+.main-content__hotels-section-selection-container-item-description {
+  padding: $hotels-section-selection-item-description-padding;
+}
+
+.main-content__hotels-section-selection-container-item-img {
+  width: 100%;
+}
+
+.main-content__hotels-section-selection-container-item-description-additional-info {
+  display: flex;
+  justify-content: space-between;
+  color: $main-font-grey-color;
+  font-weight: bold;
+}
+
+.main-content__hotels-section-selection-container-item-description-btn {
+  @extend .main-content__flights-table-content-buy-ticket-btn;
+  margin-top: $hotels-section-selection-item-btn-margin-top;
+}
+
+.main-content__hotels-all-hotels-link {
+  @extend .main-content__flights-table-all-flights-link;
+}
+
+// Atractions section
+
+.main-content__attractions-section {
+  padding: $common-section-padding;
+}
+
+.main-content__attractions-section-options {
+  @include before-every-section-options;
+}
+
+.main-content__attractions-section-options-title {
+  @include before-every-section-options-title;
+}
+
+.main-content__attractions-section-options-list {
+  @include before-every-section-options-list;
+  justify-content: space-between;
+}
+
+.main-content__attractions-section-options-list-item {
+  @include before-every-section-options-list-item;
+}
+
+.main-content__attractions-section-content {
+  display: grid;
+  grid-gap: $attractions-section-content-columns-gap;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: $common-section-content-padding-top;
+}
+
+.main-content__attractions-section-content-item {
+  position: relative;
+  cursor: pointer;
+  transition: $main-site-transition;
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.main-content__attractions-section-content-item-img {
+  width: 100%;
+  height: 100%;
+}
+
+.main-content__attractions-section-content-item-eiffel {
+  grid-row: 1 / 3;
+}
+
+.main-content__attractions-section-content-item-louvre,
+.main-content__attractions-section-content-item-notre-dam {
+  grid-column: 2 / 4;
+}
+
+.main-content__attractions-section-content-item-title-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  top: 0;
+}
+
+.main-content__attractions-section-content-item-title {
+  position: relative;
+}
+
+.main-content__attractions-section-see-all {
+  @extend .main-content__flights-table-all-flights-link;
+}
+
+// Trips selection
+
+.main-content__trips-section {
+  padding: $common-section-padding;
+}
+
+.main-content__trips-section-options {
+  @include before-every-section-options;
+}
+
+.main-content__trips-section-options-title {
+  @include before-every-section-options-title;
+}
+
+.main-content__trips-section-options-list {
+  @include before-every-section-options-list;
+}
+
+.main-content__trips-section-options-list-item {
+  @include before-every-section-options-list-item;
+}
+
+.main-content__trips-section-content {
+  padding-top: $common-section-content-padding-top;
+}
+
+.main-content__trips-section-content-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: $common-section-border;
+  margin: $trips-section-item-margin;
+}
+
+.main-content__trips-section-content-item-img {
+  width: 100%;
+  height: 100%;
+}
+
+.main-content__trips-section-content-item-description {
+  padding: $trips-section-item-descripton-padding;
+}
+
+.main-content__trips-section-content-item-description-paragraph {
+  line-height: $trips-section-item-descripton-paragraph-line-height;
+}
+
+.main-content__trips-see-all {
+  @extend .main-content__flights-table-all-flights-link;
+}
+
+/*------------------------------------------------------------------------------
+                          STYLES FOR FOOTER
+------------------------------------------------------------------------------*/
+
+.site-footer {
+  & > .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+.site-footer__column-title {
+  color: $main-font-color;
+  font-weight: normal;
+  margin-bottom: $site-footer-column-title-margin-bottom;
+}
+
+.site-footer__column-list-item {
+  margin-bottom: $site-footer-column-list-item-margin-bottom;
+  color: $main-font-color;
+  transition: $main-site-transition;
+  &:hover {
+    color: $main-font-hover-color;
+  }
+}
+
+.site-footer__column-list-item--email {
+  color: $main-font-hover-color;
+  // to prevent hover effect
+  &:hover {
+    color: $main-font-hover-color!important;
+  }
+}
+
+.site-footer__column:last-of-type {
+  & .site-footer__column-list-item:hover {
+    color: $main-font-color;
   }
 }

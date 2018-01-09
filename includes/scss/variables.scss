@@ -1,33 +1,146 @@
-// variables for general purpos
+/*------------------------------------------------------------------------------
+                  variables for large screens (> 1200px)
+------------------------------------------------------------------------------*/
 
+// variables for common purpose
 $main-font-family: 'Montserrat', sans-serif;
+$main-font-size: 16px;
 $main-font-color: #484848;
+$main-font-grey-color: #9a9a9a;
+$main-font-hover-color: #ff4b64;
 $main-site-transition: 0.4s;
-
+$common-section-padding: 70px 0 0;
+$common-section-content-padding-top: 45px;
+$common-section-border: 1px solid #e6e6e6;
 // variables for header
 $header-nav-padding: 30px 0;
-$nav-item-font-size-lg: 16px;
-$nav-item-font-size-sm: 14px;
-$nav-login-btn-font-size-lg: 16px;
-$nav-login-btn-font-size-sm: 14px;
-// title
-$header-title-font-size-lg: 72px;
-$header-title-font-size-md: 48px;
-$header-title-font-size-sm: 36px;
-$header-title-font-size-xs: 24px;
-// subtitle
-$header-subtitle-font-size-lg: 30px;
-$header-subtitle-font-size-md: 25px;
-$header-subtitle-font-size-sm: 20px;
-$header-subtitle-font-size-xs: 18px;
-//------------------------------------------------------------------------------
 $nav-homepage-font-size: 24px;
 $nav-item-right-offset: 30px;
 $nav-login-btn-width: 120px;
 $nav-login-btn-height: 35px;
+$header-title-font-size: 72px;
+$header-subtitle-font-size: 30px;
 //------------------------------------------------------------------------------
 $header-form-color: #333;
+$header-form-offset-bottom: -22px;
+$header-form-inputs-border: 1px solid #e6e6e6;
+$header-form-text-indent: 30px;
 $header-form-location-inputs-width: 330px;
 $header-form-location-inputs-height: 50px;
+$header-form-date-input-width: 180px;
 $header-form-date-input-height: 52px;
-$header-form-date-btn-height: 52px;
+$header-form-date-btn-width: 120px;
+$header-form-date-btn-height: 54px;
+$header-form-date-btn-background: #ff4b64;
+
+// variables for main content
+$main-padding-top: 110px;
+$main-content-sections-options-title-font-size: 30px;
+$main-content-sections-options-list-item-font-size: 16px;
+// flights section
+$flight-options-list-item-margin-right: 34px;
+$flights-table-content-row-padding: 50px 0;
+$flights-table-content-row-border: 1px solid #e6e6e6;
+$flights-table-content-airline-section-width: 20%;
+$flights-table-content-airline-section-img-margin-right: 28px;
+$flights-table-content-airline-section-title-margin: 0 0 10px 0;
+$flights-table-content-airline-section-details-margin: 10px 0 0 0;
+$flights-table-content-flight-section-width: 60%;
+$flights-table-content-buy-ticket-section-width: 20%;
+$flights-table-content-buy-ticket-section-btn-width: 120px;
+$flights-table-content-buy-ticket-section-btn-height: 38px;
+$flights-table-content-buy-ticket-section-btn-color: #ff4b64;
+$flights-table-content-buy-ticket-section-btn-border: 1px solid #ff4b64;
+$flights-table-all-flights-link-color: #484848;
+$flights-table-all-flights-link-margin-top: 50px;
+// hotels section
+$hotels-section-selection-container-gap: 30px;
+$hotels-section-selection-item-description-padding: 0 15px 25px 15px;
+$hotels-section-selection-item-btn-margin-top: 20px;
+// attractions-section
+$attractions-section-content-columns-gap: 30px;
+// trips-section
+$trips-section-item-margin: 0 0 30px 0;
+$trips-section-item-descripton-padding: 10px 30px 30px 30px;
+$trips-section-item-descripton-paragraph-line-height: 25px;
+
+// variables for footer
+$site-footer-column-title-margin-bottom: 60px;
+$site-footer-column-list-item-margin-bottom: 28px;
+
+/*------------------------------------------------------------------------------
+                  variables for medium screens (<= 1200px)
+------------------------------------------------------------------------------*/
+// variables for common purpose
+$container-width-md: 970px;
+// variables for header
+$header-title-font-size-md: 48px;
+$header-subtitle-font-size-md: 25px;
+// attractions section
+$attractions-section-options-list-item-margin-right-md: 15px;
+
+/*------------------------------------------------------------------------------
+                  variables for small screens (<= 992px)
+------------------------------------------------------------------------------*/
+// variables for common purpose
+$container-width-sm: 750px;
+// variables for header
+$header-title-font-size-sm: 36px;
+$header-subtitle-font-size-sm: 20px;
+// trips section
+$trips-section-item-descripton-padding-sm: 0 30px 0 30px;
+$trips-section-item-descripton-title-margin-top-sm: 15px;
+/*------------------------------------------------------------------------------
+                variables for extra small screens (<= 776px)
+------------------------------------------------------------------------------*/
+// variables for common purpose
+$container-width-xs: 90%;
+$container-margin-xs: 0 5%;
+$main-font-size-xs: 14px;
+// variables for header
+$header-title-font-size-xs: 24px;
+$header-subtitle-font-size-xs: 16px;
+$header-margin-bottom-xs: 236px;
+$header-form-offset-bottom-xs: -228px;
+$header-form-input-margin-bottom-xs: 5px;
+$header-form-input-date-text-indent-xs: 15px;
+// variables for main content
+$main-content-padding-top-xs: 50px;
+$main-content-sections-options-margin-bottom-xs: 20px;
+$main-content-sections-padding-xs: 25px 0 0;
+$main-content-sections-content-padding-top-xs: 0;
+// flights section
+$flights-table-content-row-padding-xs: 25px 0;
+$flights-table-content-flight-section-margin-xs: 30px 0;
+
+// variables for footer
+$site-footer-container-padding-top-xs: 20px;
+$site-footer-column-title-font-size-xs: 20px;
+$site-footer-column-title-margin-bottom-xs: 20px;
+$site-footer-column-list-item-margin-bottom-xs: 15px;
+
+/*------------------------------------------------------------------------------
+          variables for additional screen resolutions (<= 640px)
+------------------------------------------------------------------------------*/
+
+// variables for header
+$header-nav-padding-640: 10px 0;
+// variables for main content
+$main-content-sections-options-title-font-size-640: 20px;
+$main-content-sections-content-see-all-link-margin-top-640: 20px;
+
+/*------------------------------------------------------------------------------
+          variables for additional screen resolutions (<= 480px)
+------------------------------------------------------------------------------*/
+
+// variables for header
+$header-nav-list-item-first-font-size-480: 18px;
+$header-nav-dropdown-line-width-480: 35px;
+$header-title-font-size-480: 20px;
+$header-subtitle-font-size-480: 16px;
+// variables for main content
+$main-padding-top-480: 20px;
+// flights section
+$flights-table-content-flight-details-item-margin-bottom-480: 20px;
+// trips section
+$trips-section-content-item-description-padding-480: 0 10px 0 10px;

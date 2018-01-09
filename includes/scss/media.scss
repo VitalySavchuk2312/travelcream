@@ -4,7 +4,7 @@
 
 @media screen and (max-width: 1200px) {
   div.container {
-    width: 970px;
+    width: $container-width-md;
   }
   h1.site-header__background-title {
     font-size: $header-title-font-size-md;
@@ -16,7 +16,7 @@
 
 @media (max-width: 992px) {
   div.container {
-    width: 750px;
+    width: $container-width-sm;
   }
   h1.site-header__background-title {
     font-size: $header-title-font-size-sm;
@@ -24,12 +24,31 @@
   h3.site-header__background-subtitle {
     font-size: $header-subtitle-font-size-sm;
   }
+  // Hotels section
+  div.main-content__hotels-section-selection-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  // Attractions section
+  li.main-content__attractions-section-options-list-item {
+    margin-right: $attractions-section-options-list-item-margin-right-md;
+  }
+  // Trips section
+  section.main-content__trips-section-content-item-description {
+    padding: $trips-section-item-descripton-padding-sm;
+  }
+  h4.main-content__trips-section-content-item-description-title {
+    margin-top: $trips-section-item-descripton-title-margin-top-sm;
+  }
 }
 
 @media (max-width: 768px) {
   div.container {
-    width: 90%;
-    margin: 0 5%;
+    width: $container-width-xs;
+    margin: $container-margin-xs;
+  }
+  header.site-header {
+    // add some space for form which became column
+    margin-bottom: $header-margin-bottom-xs;
   }
   .site-header__nav-list-item:not(:first-of-type) {
     display: none;
@@ -46,11 +65,140 @@
   h3.site-header__background-subtitle {
     font-size: $header-subtitle-font-size-sm;
   }
+  form.site-header__form {
+    // to adjust form position to not cover header background
+    bottom: $header-form-offset-bottom-xs;
+    & > .container {
+      flex-direction: column;
+      & > input,
+      & > button {
+        width: 100%;
+      }
+    }
+  }
+  form.site-header__form input {
+    margin-bottom: $header-form-input-margin-bottom-xs;
+    font-size: $main-font-size-xs;
+  }
+  input.site-header__form-input-date {
+    text-indent: $header-form-input-date-text-indent-xs;
+  }
+  button.site-header__form-input-submit {
+    font-size: $main-font-size-xs;
+  }
+  // Main content
+  main.main-content {
+    padding-top: $main-content-padding-top-xs;
+  }
+  ul.main-content__section-options-list {
+    font-size: $main-font-size-xs;
+  }
+  section.main-content__section-options {
+    flex-direction: column;
+    margin-bottom: $main-content-sections-options-margin-bottom-xs;
+  }
+  div.main-content__hotels-section,
+  div.main-content__attractions-section,
+  div.main-content__trips-section {
+    padding: $main-content-sections-padding-xs;
+  }
+  div.main-content__hotels-section-selection-container,
+  div.main-content__attractions-section-content,
+  div.main-content__trips-section-content {
+    padding-top: $main-content-sections-content-padding-top-xs;
+  }
+  a.main-content__see-all-link {
+    font-size: $main-font-size-xs;
+    margin-top: $main-content-sections-content-see-all-link-margin-top-640;
+  }
+  // Flights section
+  div.main-content__flights-table-content-row {
+    padding: $flights-table-content-row-padding-xs;
+  }
+  h4.main-content__flights-table-content-flight-details-item-title,
+  h4.main-content__flights-table-content-flight-details-item-details {
+    font-size: $main-font-size-xs;
+  }
+  a.main-content__flights-table-content-buy-ticket-btn {
+    font-size: $main-font-size-xs;
+  }
+  // remove navigation bar
+  div.main-content__flights-table-content-first-row {
+    display: none;
+  }
+  .main-content__flights-table-content-row {
+    flex-direction: column;
+  }
+  section.main-content__flights-table-content-airline,
+  section.main-content__flights-table-content-flight,
+  section.main-content__flights-table-content-buy-ticket {
+    width: 100%;
+    justify-content: center;
+  }
+  section.main-content__flights-table-content-flight {
+    margin: $flights-table-content-flight-section-margin-xs;
+  }
+  a.main-content__flights-table-content-buy-ticket-btn {
+    width: 100%;
+  }
+  // Hotels section
+  div.main-content__hotels-section-selection-container {
+    grid-template-columns: 1fr;
+  }
+  span.main-content__hotels-section-selection-container-item-description-additional-info-distance,
+  span.main-content__hotels-section-selection-container-item-description-additional-info-wifi {
+    font-size: $main-font-size-xs;
+  }
+  a.main-content__hotels-section-selection-container-item-description-btn {
+    font-size: $main-font-size-xs;
+  }
+  // atractions section
+  div.main-content__attractions-section-content {
+    grid-template-columns: 1fr;
+  }
+  section.main-content__attractions-section-content-item-eiffel {
+    grid-row: 1;
+  }
+  section.main-content__attractions-section-content-item-louvre {
+    grid-row: 2;
+    grid-column: auto;
+  }
+  section.main-content__attractions-section-content-item-notre-dam {
+    grid-column: auto;
+  }
+  // Trips selection
+  .main-content__trips-section-content-item {
+    flex-direction: column;
+  }
+  h4.main-content__trips-section-content-item-description-title,
+  p.main-content__trips-section-content-item-description-paragraph {
+    font-size: $main-font-size-xs;
+  }
+  // Footer
+  footer.site-footer {
+    & > .container {
+      padding-top: $site-footer-container-padding-top-xs;
+    }
+  }
+  .site-footer__column {
+    text-align: center;
+    width: 50%;
+  }
+  h2.site-footer__column-title {
+    font-size: $site-footer-column-title-font-size-xs;
+    font-weight: bold;
+    margin-bottom: $site-footer-column-title-margin-bottom-xs;
+  }
+  li.site-footer__column-list-item {
+    font-size: $main-font-size-xs;
+    margin-bottom: $site-footer-column-list-item-margin-bottom-xs;
+  }
 }
 
 @media (max-width: 640px) {
+  // Header
   nav.site-header__nav {
-    padding: 10px 0;
+    padding: $header-nav-padding-640;
   }
   div.site-header__background-title-container {
     align-items: flex-end;
@@ -60,21 +208,57 @@
     margin-bottom: 0;
   }
   h3.site-header__background-subtitle {
-    font-size: $header-subtitle-font-size-xs;
+    font-size: $main-font-size;
+  }
+  // Main content
+  h2.main-content__section-options-title {
+    font-size: $main-content-sections-options-title-font-size-640;
+  }
+}
+// separate query for scroll-x appearing in attractions section
+@media (max-width: 540px) {
+  .main-content__attractions-section-options-list {
+    overflow-x: scroll;
+    width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   li.site-header__nav-list-item:first-of-type {
-    font-size: 18px;
+    font-size: $header-nav-list-item-first-font-size-480;
   }
   span.site-header__mobile-dropdown-line {
-    width: 35px;
+    width: $header-nav-dropdown-line-width-480;
   }
   h1.site-header__background-title {
-    font-size: 18px;
+    font-size: $header-title-font-size-480;
   }
   h3.site-header__background-subtitle {
-    font-size: 14px;
+    font-size: $header-subtitle-font-size-480;
+  }
+  // Main content
+  main.main-content {
+    padding-top: $main-padding-top-480;
+  }
+  // Flights section
+  li.main-content__flights-table-content-flight-details-item {
+    width: 50%;
+    margin-bottom: $flights-table-content-flight-details-item-margin-bottom-480;
+  }
+  // Trips section
+  section.main-content__trips-section-content-item-description {
+    padding: $trips-section-content-item-description-padding-480;
+  }
+  h4.main-content__trips-section-content-item-description-title {
+    margin-bottom: 0;
+  }
+  // Footer
+  footer.site-footer {
+    & > .container {
+      flex-direction: column;
+    }
+  }
+  .site-footer__column {
+    width: 100%;
   }
 }

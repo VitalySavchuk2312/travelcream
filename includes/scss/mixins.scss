@@ -1,0 +1,29 @@
+@mixin before-every-section-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin before-every-section-options-title {
+  font-size: $main-content-sections-options-title-font-size;
+}
+
+@mixin before-every-section-options-list {
+  display: flex;
+  font-size: $main-content-sections-options-list-item-font-size;
+}
+
+@mixin before-every-section-options-list-item {
+  margin-right: $flight-options-list-item-margin-right;
+  transition: $main-site-transition;
+  text-align: center;
+  &:first-of-type {
+    color: #ff4b64;
+  }
+  &:last-of-type {
+    margin-right: 0;
+  }
+  &:hover {
+    color: #ff4b64;
+  }
+}
